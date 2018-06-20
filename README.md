@@ -28,7 +28,7 @@ Nos enfocamos en dos ámbitos diferentes los cuales describimos así:
 
 ###### Lo que piensan:
  
-- **Mujeres **
+- **Mujeres**
   - La próxima lo denuncio
   - Que se muera
   - Me llevo a mis hijos
@@ -42,7 +42,7 @@ Nos enfocamos en dos ámbitos diferentes los cuales describimos así:
  
 ###### Lo que hacen:
  
-- **Mujeres **
+- **Mujeres**
   - Callar
   - Evitar salir
   - Defender y justificar a su agresor
@@ -54,7 +54,7 @@ Nos enfocamos en dos ámbitos diferentes los cuales describimos así:
 
 ###### Lo que sienten:
  
-- **Mujeres **
+- **Mujeres**
   - Dolor
   - Impotencia
   - Miedo
