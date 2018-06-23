@@ -1,3 +1,4 @@
+using Fedesoft.WomApp.App.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,8 +11,7 @@ namespace Fedesoft.WomApp.App
 		public App ()
 		{
 			InitializeComponent();
-
-			MainPage = new MainPage();
+			MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()
