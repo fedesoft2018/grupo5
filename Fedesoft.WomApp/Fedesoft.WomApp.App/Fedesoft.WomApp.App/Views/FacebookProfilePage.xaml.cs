@@ -40,26 +40,38 @@ namespace Fedesoft.WomApp.App.Views
         private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
         {
             var accessToken = ExtractAccessTokenFromUrl(e.Url);
-            if (!string.IsNullOrEmpty(accessToken))
+            try
             {
-                var vm = BindingContext as FacebookViewModel;
-                await vm.SetFacebookUserProfileAsync(accessToken);
-                this.Content = this.MainStackLayout;
+                if (!string.IsNullOrEmpty(accessToken))
+                {
+                    var vm = BindingContext as FacebookViewModel;
+                    await vm.SetFacebookUserProfileAsync(accessToken);
+                    this.Content = this.MainStackLayout;
+                }
+            }
+            catch (Exception)
+            {
             }
         }
 
         private string ExtractAccessTokenFromUrl(string url)
         {
             var accessToken = string.Empty;
-            if (url.Contains("access_token") && url.Contains("&expires_in="))
+            try
             {
-                var at = url.Replace(HttpsFacebookUrl, string.Empty);
-                if (Device.RuntimePlatform == Device.UWP || Device.RuntimePlatform == Device.WPF)
+                if (url.Contains("access_token") && url.Contains("&expires_in="))
                 {
-                    at = url.Replace(HttpFacebookUrl, string.Empty);
-                }
+                    var at = url.Replace(HttpsFacebookUrl, string.Empty);
+                    if (Device.RuntimePlatform == Device.UWP || Device.RuntimePlatform == Device.WPF)
+                    {
+                        at = url.Replace(HttpFacebookUrl, string.Empty);
+                    }
 
-                accessToken = at.Remove(at.IndexOf("&expires_in="));
+                    accessToken = at.Remove(at.IndexOf("&expires_in="));
+                }
+            }
+            catch (Exception)
+            {
             }
 
             return accessToken;
