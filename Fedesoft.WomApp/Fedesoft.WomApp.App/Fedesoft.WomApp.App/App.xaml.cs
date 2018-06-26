@@ -10,7 +10,7 @@ namespace Fedesoft.WomApp.App
 	{
 		public App ()
 		{
-			InitializeComponent();
+			this.InitializeComponent();
 			MainPage = new NavigationPage(new MainPage());
 		}
 
