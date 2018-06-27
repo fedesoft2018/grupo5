@@ -11,7 +11,7 @@ namespace Fedesoft.WomApp.App
 		public App ()
 		{
 			this.InitializeComponent();
-			MainPage = new NavigationPage(new MainPage());
+			MainPage = new MainMenu();
 		}
 
 		protected override void OnStart ()
