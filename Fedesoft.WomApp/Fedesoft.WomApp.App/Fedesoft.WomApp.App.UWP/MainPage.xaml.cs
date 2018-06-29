@@ -20,7 +20,7 @@ namespace Fedesoft.WomApp.App.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
+            Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
             LoadApplication(new Fedesoft.WomApp.App.App());
         }
     }
