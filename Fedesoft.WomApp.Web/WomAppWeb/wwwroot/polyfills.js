@@ -5473,7 +5473,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\richi\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! C:\Users\MauricioAlejandroRes\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
