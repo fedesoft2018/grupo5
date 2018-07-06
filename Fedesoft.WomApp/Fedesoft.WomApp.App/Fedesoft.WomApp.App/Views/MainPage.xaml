@@ -2,10 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Fedesoft.WomApp.App.Views.MainPage"
-             Title="Facebook Login"
+             Title="WomApp"
              BackgroundColor="White">
     <StackLayout Orientation="Vertical">
-        <Label Text="Login with Facebook API" FontSize="66" TextColor="Black"/>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+            <Image Source="agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Regístrate" TextColor="Gray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
         <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B" Font="Bold" FontSize="26" Clicked="LoginWithFacebook_Clicked"/>
     </StackLayout>
 </ContentPage>

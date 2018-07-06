@@ -14,12 +14,17 @@ namespace Fedesoft.WomApp.App.Views
 	{
 		public MainPage ()
 		{
-			InitializeComponent ();
+			this.InitializeComponent();
 		}
 
         private async void LoginWithFacebook_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new FacebookProfilePage());
+            await this.Navigation.PushAsync(new FacebookProfilePage());
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await this.Navigation.PushAsync(new RegisterPage());
         }
     }
 }

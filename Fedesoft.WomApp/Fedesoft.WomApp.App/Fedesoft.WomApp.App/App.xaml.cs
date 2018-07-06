@@ -20,7 +20,8 @@ namespace Fedesoft.WomApp.App
 		{
 			this.InitializeComponent();
 			MainPage = new MainMenu();
-		}
+            //MainPage = new MapPage();
+        }
 
 		protected override void OnStart ()
 		{

@@ -1,4 +1,5 @@
 ﻿using Fedesoft.WomApp.App.Models;
+using Fedesoft.WomApp.App.Views.Base;
 using Fedesoft.WomApp.CrossCutting;
 using System;
 using System.Collections.Generic;
@@ -24,30 +25,28 @@ namespace Fedesoft.WomApp.App.Views
             // Build the Menu
             MainMenuItems = new List<MainMenuItem>()
             {
-                new MainMenuItem() { Title = "Línea Púrpura", LineNumber = "01800112137", Icon = "menu_inbox.png", TargetType = typeof(MainPage) },
-                new MainMenuItem() { Title = "Línea 155", LineNumber="155", Icon = "menu_stock.png", TargetType = typeof(MainPage) },
-                new MainMenuItem() { Title = "Línea 123", LineNumber="123", Icon = "menu_stock.png", TargetType = typeof(MainPage) },
-                new MainMenuItem() { Title = "Prevención", Icon = "menu_stock.png", TargetType = typeof(MainPage) }
+                new MainMenuItem() { Title = "Línea Púrpura", LineNumber = "01800112137", Icon = "linea_purpura_24x24.png", TargetType = typeof(MainPage), IconWith = 24, IconHeight = 24 },
+                new MainMenuItem() { Title = "Línea 155", LineNumber="155", Icon = "linea_155_24x24.png", TargetType = typeof(MainPage), IconWith = 24, IconHeight = 24 },
+                new MainMenuItem() { Title = "Línea 123", LineNumber="123", Icon = "linea_123_24x24.png", TargetType = typeof(MainPage), IconWith = 24, IconHeight = 24 },
+                new MainMenuItem() { Title = "Prevención", Icon = "prevencion_24x24.png", TargetType = typeof(MainPage), IconWith = 24, IconHeight = 24 }
             };
 
             // Set the default page, this is the "home" page.
-            Detail = new NavigationPage(new MainPage());
+            this.Detail = new NavigationPage(new MainPage());
             this.InitializeComponent();
-            //MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
         public void MainMenuItem_Selected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MainMenuItem;
-            if (item != null)
+            if (e.SelectedItem is MainMenuItem item)
             {
                 if (!string.IsNullOrEmpty(item.LineNumber))
                 {
                     Dialer.MakeCall(item.LineNumber);
                 }
 
-                MenuListView.SelectedItem = null;
-                IsPresented = false;
+                this.MenuListView.SelectedItem = null;
+                this.IsPresented = false;
             }
         }
 
