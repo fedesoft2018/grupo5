@@ -89,7 +89,7 @@ module.exports = "/*!\n *  Font Awesome 4.7.0 by @davegandy - http://fontawesome
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\n"
 
 /***/ }),
 
@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\richi\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-__webpack_require__(/*! C:\Users\richi\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\node_modules\font-awesome\css\font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
-module.exports = __webpack_require__(/*! C:\Users\richi\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\MauricioAlejandroRes\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! C:\Users\MauricioAlejandroRes\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\node_modules\font-awesome\css\font-awesome.css */"./node_modules/font-awesome/css/font-awesome.css");
+module.exports = __webpack_require__(/*! C:\Users\MauricioAlejandroRes\source\repos\grupo5\Fedesoft.WomApp.Web\WomAppWeb\src\styles.css */"./src/styles.css");
 
 
 /***/ })
