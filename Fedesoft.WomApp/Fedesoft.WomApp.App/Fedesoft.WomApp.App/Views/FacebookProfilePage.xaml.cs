@@ -1,22 +1,43 @@
-﻿using Fedesoft.WomApp.App.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿//-----------------------------------------------------------------------
+// <copyright file="FacebookProfilePage.xaml.cs" company="Fedesoft">
+//     Copyright (c) Fedesoft. All rights reserved.
+// </copyright>
+// <author>Ricardo Linares Correa</author>
+//-----------------------------------------------------------------------
 
 namespace Fedesoft.WomApp.App.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class FacebookProfilePage : ContentPage
-	{
-        private const string HttpsFacebookUrl = "https://www.facebook.com/connect/login_success.html#access_token=";
+    using System;
+
+    using Fedesoft.WomApp.App.ViewModels;
+
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
+
+    /// <summary>
+    /// Defines the <see cref="FacebookProfilePage" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class FacebookProfilePage : ContentPage
+    {
+        /// <summary>
+        /// Defines the HttpFacebookUrl
+        /// </summary>
         private const string HttpFacebookUrl = "http://www.facebook.com/connect/login_success.html#access_token=";
+
+        /// <summary>
+        /// Defines the HttpsFacebookUrl
+        /// </summary>
+        private const string HttpsFacebookUrl = "https://www.facebook.com/connect/login_success.html#access_token=";
+
+        /// <summary>
+        /// Defines the ClientId
+        /// </summary>
         private string ClientId = "2149804661917953";
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FacebookProfilePage"/> class.
+        /// </summary>
         public FacebookProfilePage()
         {
             try
@@ -37,23 +58,11 @@ namespace Fedesoft.WomApp.App.Views
             }
         }
 
-        private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
-        {
-            var accessToken = ExtractAccessTokenFromUrl(e.Url);
-            try
-            {
-                if (!string.IsNullOrEmpty(accessToken))
-                {
-                    var vm = BindingContext as FacebookViewModel;
-                    await vm.SetFacebookUserProfileAsync(accessToken);
-                    this.Content = this.MainStackLayout;
-                }
-            }
-            catch (Exception)
-            {
-            }
-        }
-
+        /// <summary>
+        /// The ExtractAccessTokenFromUrl
+        /// </summary>
+        /// <param name="url">The url<see cref="string"/></param>
+        /// <returns>The <see cref="string"/></returns>
         private string ExtractAccessTokenFromUrl(string url)
         {
             var accessToken = string.Empty;
@@ -75,6 +84,28 @@ namespace Fedesoft.WomApp.App.Views
             }
 
             return accessToken;
+        }
+
+        /// <summary>
+        /// The WebViewOnNavigated
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/></param>
+        /// <param name="e">The e<see cref="WebNavigatedEventArgs"/></param>
+        private async void WebViewOnNavigated(object sender, WebNavigatedEventArgs e)
+        {
+            var accessToken = ExtractAccessTokenFromUrl(e.Url);
+            try
+            {
+                if (!string.IsNullOrEmpty(accessToken))
+                {
+                    var vm = BindingContext as FacebookViewModel;
+                    await vm.SetFacebookUserProfileAsync(accessToken);
+                    this.Content = this.MainStackLayout;
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -8,12 +8,12 @@
         <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
             <Image Source="agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
             <Label Text="Regístrate" TextColor="Gray">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>

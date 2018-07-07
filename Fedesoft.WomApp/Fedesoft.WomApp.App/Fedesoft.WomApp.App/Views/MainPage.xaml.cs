@@ -1,30 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿//-----------------------------------------------------------------------
+// <copyright file="MainPage.xaml.cs" company="Fedesoft">
+//     Copyright (c) Fedesoft. All rights reserved.
+// </copyright>
+// <author>Ricardo Linares Correa</author>
+//-----------------------------------------------------------------------
 
 namespace Fedesoft.WomApp.App.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : ContentPage
-	{
-		public MainPage ()
-		{
-			this.InitializeComponent();
-		}
+    using Fedesoft.WomApp.App.ViewModels;
 
-        private async void LoginWithFacebook_Clicked(object sender, EventArgs e)
-        {
-            await this.Navigation.PushAsync(new FacebookProfilePage());
-        }
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+    /// <summary>
+    /// Defines the <see cref="MainPage" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage : ContentPage
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainPage"/> class.
+        /// </summary>
+        public MainPage()
         {
-            await this.Navigation.PushAsync(new RegisterPage());
+            this.BindingContext = new MainPageViewModel();
+            this.InitializeComponent();
         }
     }
 }

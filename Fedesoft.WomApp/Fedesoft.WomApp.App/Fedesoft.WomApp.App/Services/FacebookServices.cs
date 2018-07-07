@@ -1,15 +1,29 @@
-﻿using Fedesoft.WomApp.App.Models;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿//-----------------------------------------------------------------------
+// <copyright file="FacebookServices.cs" company="Fedesoft">
+//     Copyright (c) Fedesoft. All rights reserved.
+// </copyright>
+// <author>Ricardo Linares Correa</author>
+//-----------------------------------------------------------------------
 
 namespace Fedesoft.WomApp.App.Services
 {
+    using System.Net.Http;
+    using System.Threading.Tasks;
+
+    using Fedesoft.WomApp.App.Models;
+
+    using Newtonsoft.Json;
+    
+    /// <summary>
+    /// Defines the <see cref="FacebookServices" />
+    /// </summary>
     public class FacebookServices
     {
+        /// <summary>
+        /// The GetFacebookProfileAsync
+        /// </summary>
+        /// <param name="accessToken">The accessToken<see cref="string"/></param>
+        /// <returns>The <see cref="Task{FacebookProfile}"/></returns>
         public async Task<FacebookProfile> GetFacebookProfileAsync(string accessToken)
         {
             var requestUrl =

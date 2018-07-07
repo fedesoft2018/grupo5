@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Fedesoft.WomApp.Contracts\Fedesoft.WomApp.Contracts.csproj" />
     <ProjectReference Include="..\..\Fedesoft.WomApp.CrossCutting\Fedesoft.WomApp.CrossCutting.csproj" />
+    <ProjectReference Include="..\..\Fedesoft.WomApp.Domain\Fedesoft.WomApp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

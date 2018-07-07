@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿//-----------------------------------------------------------------------
+// <copyright file="RegisterPage.xaml.cs" company="Fedesoft">
+//     Copyright (c) Fedesoft. All rights reserved.
+// </copyright>
+// <author>Ricardo Linares Correa</author>
+//-----------------------------------------------------------------------
 
 namespace Fedesoft.WomApp.App.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RegisterPage : ContentPage
-	{
-		public RegisterPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
+
+    /// <summary>
+    /// Defines the <see cref="RegisterPage" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class RegisterPage : ContentPage
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegisterPage"/> class.
+        /// </summary>
+        public RegisterPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

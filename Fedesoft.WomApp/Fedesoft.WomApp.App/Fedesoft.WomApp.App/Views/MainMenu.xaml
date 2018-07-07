@@ -1,22 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Fedesoft.WomApp.App.Views.MainMenu"
-             xmlns:pages="clr-namespace:Fedesoft.WomApp.App.Views">
+             x:Class="Fedesoft.WomApp.App.Views.MainMenu">
   <MasterDetailPage.Master>
-        <ContentPage Title="Menu" BackgroundColor="#616161" Appearing="ContentPage_Appearing" Icon="hamburger_menu.png">
-            <!-- Menu Title background color -->
-
-            <!-- Slide out Menu -->
+        <ContentPage Title="Menu" BackgroundColor="#616161" Icon="hamburger_menu.png">
             <StackLayout VerticalOptions="FillAndExpand">
                 <Label Text="WomApp" TextColor="White" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 5, 0, 5" />
 
-                <ListView x:Name="MenuListView" ItemsSource="{Binding MainMenuItems}" ItemSelected="MainMenuItem_Selected" VerticalOptions="FillAndExpand" SeparatorVisibility="None" BackgroundColor="#f5f5f5" HasUnevenRows="True">
-                    <!-- Menu background color -->
+                <ListView x:Name="MenuListView" ItemsSource="{Binding MenuItems}" SelectedItem="{Binding Selected, Mode=TwoWay}" VerticalOptions="FillAndExpand" SeparatorVisibility="None" BackgroundColor="#f5f5f5" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent">
+                                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent">
                                     <StackLayout Orientation="Horizontal">
                                         <Image Source="{Binding Icon}" Aspect="AspectFit" WidthRequest="{Binding IconWidth}" HeightRequest="{Binding IconHeight}" />
                                         <Label Text="{Binding Title}" TextColor="Black"/>
@@ -27,7 +22,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-
         </ContentPage>
     </MasterDetailPage.Master>
 </MasterDetailPage>

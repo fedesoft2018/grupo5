@@ -1,25 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿//-----------------------------------------------------------------------
+// <copyright file="PermissionsManager.cs" company="Fedesoft">
+//     Copyright (c) Fedesoft. All rights reserved.
+// </copyright>
+// <author>Ricardo Linares Correa</author>
+//-----------------------------------------------------------------------
+
 using Fedesoft.WomApp.App.Droid.Implementations;
-using Fedesoft.WomApp.Contracts;
-using Plugin.Permissions;
-using Plugin.Permissions.Abstractions;
+
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(PermissionsManager))]
 namespace Fedesoft.WomApp.App.Droid.Implementations
 {
+    using System;
+    using System.Threading.Tasks;
+
+    using Fedesoft.WomApp.Contracts;
+
+    using Plugin.Permissions;
+    using Plugin.Permissions.Abstractions;
+    
+    /// <summary>
+    /// Defines the <see cref="PermissionsManager" />
+    /// </summary>
     public class PermissionsManager : IPermissionsManager
     {
+        /// <summary>
+        /// The CheckLocationPermissions
+        /// </summary>
+        /// <returns>The <see cref="Task{bool}"/></returns>
         public async Task<bool> CheckLocationPermissions()
         {
             var result = true;
