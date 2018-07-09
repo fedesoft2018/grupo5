@@ -5,68 +5,9 @@
 // <author>Ricardo Linares Correa</author>
 //-----------------------------------------------------------------------
 
-namespace Fedesoft.WomApp.App.Models
+namespace Fedesoft.WomApp.Domain
 {
     using Newtonsoft.Json;
-
-    /// <summary>
-    /// Defines the <see cref="AgeRange" />
-    /// </summary>
-    public class AgeRange
-    {
-        /// <summary>
-        /// Gets or sets the Min
-        /// </summary>
-        public int Min { get; set; }
-    }
-
-    /// <summary>
-    /// Defines the <see cref="Cover" />
-    /// </summary>
-    public class Cover
-    {
-        /// <summary>
-        /// Gets or sets the Id
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or sets the OffsetY
-        /// </summary>
-        public int OffsetY { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Source
-        /// </summary>
-        public string Source { get; set; }
-    }
-
-    /// <summary>
-    /// Defines the <see cref="Data" />
-    /// </summary>
-    public class Data
-    {
-        /// <summary>
-        /// Gets or sets a value indicating whether IsSilhouette
-        /// </summary>
-        public bool IsSilhouette { get; set; }
-
-        /// <summary>
-        /// Gets or sets the Url
-        /// </summary>
-        public string Url { get; set; }
-    }
-
-    /// <summary>
-    /// Defines the <see cref="Device" />
-    /// </summary>
-    public class Device
-    {
-        /// <summary>
-        /// Gets or sets the Os
-        /// </summary>
-        public string Os { get; set; }
-    }
 
     /// <summary>
     /// Defines the <see cref="FacebookProfile" />
@@ -135,16 +76,5 @@ namespace Fedesoft.WomApp.App.Models
         /// Gets or sets the Picture
         /// </summary>
         public Picture Picture { get; set; }
-    }
-
-    /// <summary>
-    /// Defines the <see cref="Picture" />
-    /// </summary>
-    public class Picture
-    {
-        /// <summary>
-        /// Gets or sets the Data
-        /// </summary>
-        public Data Data { get; set; }
     }
 }
