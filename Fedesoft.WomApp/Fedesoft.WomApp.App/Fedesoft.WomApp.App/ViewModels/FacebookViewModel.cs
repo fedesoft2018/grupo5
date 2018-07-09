@@ -7,17 +7,16 @@
 
 namespace Fedesoft.WomApp.App.ViewModels
 {
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
-    using Fedesoft.WomApp.App.Models;
-    using Fedesoft.WomApp.App.Services;
-    
+    using Fedesoft.WomApp.App.ViewModels.Base;
+    using Fedesoft.WomApp.Domain;
+    using Fedesoft.WomApp.Services;
+
     /// <summary>
     /// Defines the <see cref="FacebookViewModel" />
     /// </summary>
-    public class FacebookViewModel : INotifyPropertyChanged
+    public class FacebookViewModel : ViewModelBase
     {
         /// <summary>
         /// Defines the facebookProfile
@@ -25,21 +24,12 @@ namespace Fedesoft.WomApp.App.ViewModels
         private FacebookProfile facebookProfile;
 
         /// <summary>
-        /// Defines the PropertyChanged
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// Gets or sets the FacebookProfile
         /// </summary>
         public FacebookProfile FacebookProfile
         {
-            get { return this.facebookProfile; }
-            set
-            {
-                this.facebookProfile = value;
-                this.OnPropertyChanged();
-            }
+            get => this.facebookProfile;
+            set => this.SetProperty(ref this.facebookProfile, value);
         }
 
         /// <summary>
@@ -51,15 +41,6 @@ namespace Fedesoft.WomApp.App.ViewModels
         {
             var facebookServices = new FacebookServices();
             this.FacebookProfile = await facebookServices.GetFacebookProfileAsync(accessToken);
-        }
-
-        /// <summary>
-        /// The OnPropertyChanged
-        /// </summary>
-        /// <param name="propertyName">The propertyName<see cref="string"/></param>
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -5,12 +5,12 @@
 // <author>Ricardo Linares Correa</author>
 //-----------------------------------------------------------------------
 
-namespace Fedesoft.WomApp.App.Services
+namespace Fedesoft.WomApp.Services
 {
     using System.Net.Http;
     using System.Threading.Tasks;
 
-    using Fedesoft.WomApp.App.Models;
+    using Fedesoft.WomApp.Domain;
 
     using Newtonsoft.Json;
     

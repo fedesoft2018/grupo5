@@ -50,11 +50,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         public IList<MainMenuItem> MenuItems
         {
             get => this.menuItems;
-            set
-            {
-                this.menuItems = value;
-                this.OnPropertyChanged();
-            }
+            set => this.SetProperty(ref this.menuItems, value);
         }
 
         /// <summary>

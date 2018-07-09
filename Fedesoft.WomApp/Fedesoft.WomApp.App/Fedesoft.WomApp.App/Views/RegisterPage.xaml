@@ -4,9 +4,8 @@
              x:Class="Fedesoft.WomApp.App.Views.RegisterPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry VerticalOptions="Center" HorizontalOptions="Fill" Placeholder="Ej. usuario@womaap.com" Text="{Binding Email}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
