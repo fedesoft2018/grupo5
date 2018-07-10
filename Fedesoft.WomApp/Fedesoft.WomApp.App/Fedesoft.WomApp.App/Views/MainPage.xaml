@@ -17,6 +17,6 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
-        <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B" Font="Bold" FontSize="26" Clicked="LoginWithFacebook_Clicked"/>
+        <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B" Font="Bold" FontSize="26"/>
     </StackLayout>
 </ContentPage>

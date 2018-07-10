@@ -23,7 +23,7 @@ namespace Fedesoft.WomApp.App.Views
         /// </summary>
         public MainPage()
         {
-            this.BindingContext = new MainPageViewModel();
+            this.BindingContext = new MainPageViewModel(this);
             this.InitializeComponent();
         }
     }

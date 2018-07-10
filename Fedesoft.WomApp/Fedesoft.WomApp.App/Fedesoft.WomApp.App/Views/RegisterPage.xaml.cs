@@ -24,7 +24,7 @@ namespace Fedesoft.WomApp.App.Views
         public RegisterPage()
         {
             this.InitializeComponent();
-            this.BindingContext = new RegisterPageViewModel();
+            this.BindingContext = new RegisterPageViewModel(this);
         }
     }
 }

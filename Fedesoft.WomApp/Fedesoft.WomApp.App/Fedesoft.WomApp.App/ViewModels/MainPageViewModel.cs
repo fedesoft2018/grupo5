@@ -19,11 +19,11 @@ namespace Fedesoft.WomApp.App.ViewModels
     /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
-        /// </summary>
-        public MainPageViewModel()
+        public ContentPage Page { get; private set; }
+
+        public MainPageViewModel(ContentPage page)
         {
+            this.Page = page;
             this.RegisterCommand = new Command(GoToRegister);
         }
 
@@ -42,8 +42,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         /// </summary>
         private async void GoToFacebook()
         {
-            var menu = App.Current.MainPage as MainMenu;
-            await menu.Detail.Navigation.PushAsync(new FacebookProfilePage());
+            await this.Page.Navigation.PushAsync(new FacebookProfilePage());
         }
 
         /// <summary>
@@ -51,8 +50,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         /// </summary>
         private async void GoToRegister()
         {
-            var menu = App.Current.MainPage as MainMenu;
-            await menu.Detail.Navigation.PushAsync(new RegisterPage());
+            await this.Page.Navigation.PushAsync(new RegisterPage());
         }
     }
 }
