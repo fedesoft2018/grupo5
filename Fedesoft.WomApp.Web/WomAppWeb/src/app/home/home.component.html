@@ -1,0 +1,10 @@
+﻿<h1>Hola {{currentUser.firstName}}!</h1>
+<p>Has iniciado sesión en Womapp!!</p>
+<h3>Todos los usuarios registrados:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Eliminar</a>
+    </li>
+</ul>
+<p><a [routerLink]="['/login']">Cerrar sesión</a></p>
