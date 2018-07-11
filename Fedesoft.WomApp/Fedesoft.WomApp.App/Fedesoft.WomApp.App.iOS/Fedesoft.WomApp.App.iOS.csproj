@@ -230,4 +230,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\agregar_usuario_32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megafono_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megafono_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megafono_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megafono_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megafono_128x128.png" />
+  </ItemGroup>
 </Project>

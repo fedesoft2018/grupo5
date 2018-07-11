@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MainPage.xaml.cs" company="Fedesoft">
+// <copyright file="MasterPageDetail.xaml.cs" company="Fedesoft">
 //     Copyright (c) Fedesoft. All rights reserved.
 // </copyright>
 // <author>Ricardo Linares Correa</author>
@@ -7,23 +7,20 @@
 
 namespace Fedesoft.WomApp.App.Views
 {
-    using Fedesoft.WomApp.App.ViewModels;
-
     using Xamarin.Forms;
     using Xamarin.Forms.Xaml;
 
     /// <summary>
-    /// Defines the <see cref="MainPage" />
+    /// Defines the <see cref="MasterPageDetail" />
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class MasterPageDetail : ContentPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainPage"/> class.
+        /// Initializes a new instance of the <see cref="MasterPageDetail"/> class.
         /// </summary>
-        public MainPage()
+        public MasterPageDetail()
         {
-            this.BindingContext = new MainPageViewModel(this);
             this.InitializeComponent();
         }
     }

@@ -8,7 +8,7 @@
 	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<application android:label="Fedesoft.WomApp.App.Android">
+	<application android:label="Fedesoft.WomApp.App.Android" android:theme="@android:style/Theme.Material.Light.DarkActionBar">
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBzYlehPRHivj6_Kv96MqxHKn9NHUoa3Yw" />
 	</application>
 </manifest>

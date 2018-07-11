@@ -11,9 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace Fedesoft.WomApp.App
 {
     using Fedesoft.WomApp.App.Views;
+    using Fedesoft.WomApp.CrossCutting;
+
     using Microsoft.AppCenter;
     using Microsoft.AppCenter.Analytics;
     using Microsoft.AppCenter.Crashes;
+    using Plugin.Settings;
     using Xamarin.Forms;
 
     /// <summary>
@@ -41,18 +44,18 @@ namespace Fedesoft.WomApp.App
         /// </summary>
         public static NavigationPage NavPage = null;
 
+        public static string UserId
+        {
+            get => CrossSettings.Current.GetValueOrDefault(Constants.UserIdKey, string.Empty);
+            set => CrossSettings.Current.AddOrUpdateValue(Constants.UserIdKey, value);
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="App"/> class.
         /// </summary>
         public App()
         {
             this.InitializeComponent();
-            NavPage = new NavigationPage(new MainPage());
-            var masterPage = new MainMenu
-            {
-                Detail = NavPage
-            };
-            this.MainPage = masterPage;
         }
 
         /// <summary>
@@ -60,6 +63,7 @@ namespace Fedesoft.WomApp.App
         /// </summary>
         protected override void OnResume()
         {
+            this.OpenFirstPage();
         }
 
         /// <summary>
@@ -75,7 +79,35 @@ namespace Fedesoft.WomApp.App
         protected override void OnStart()
         {
             // Handle when your app starts
+            this.OpenFirstPage();
             AppCenter.Start($"android={AndroidAnalyticsKey};uwp={UwpAnalyticsKey};ios={IosAnalyticsKey}", typeof(Analytics), typeof(Crashes));
+        }
+
+        private void OpenFirstPage()
+        {
+            var master = new MainMenu();
+            SetNavPage();
+            var masterPage = new MasterPage
+            {
+                Detail = NavPage,
+                Master = master
+            };
+            this.MainPage = masterPage;
+        }
+
+        /// <summary>
+        /// The SetNavPage
+        /// </summary>
+        private static void SetNavPage()
+        {
+            if (!string.IsNullOrEmpty(UserId))
+            {
+                NavPage = new NavigationPage(new UserProfilePage());
+            }
+            else
+            {
+                NavPage = new NavigationPage(new WelcomePage());
+            }
         }
     }
 }

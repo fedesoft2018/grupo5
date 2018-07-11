@@ -10,6 +10,8 @@
             <Label Text="Contraseña:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             <Entry VerticalOptions="Center" HorizontalOptions="Fill" IsPassword="True" Text="{Binding Password, Mode=TwoWay}" />
             <Button VerticalOptions="Center" HorizontalOptions="Center" Text="Registrar" Command="{Binding SaveUserCommand}" />
+            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Color="Black" />
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

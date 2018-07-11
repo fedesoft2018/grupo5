@@ -5,7 +5,7 @@
 // <author>Ricardo Linares Correa</author>
 //-----------------------------------------------------------------------
 
-namespace Fedesoft.WomApp.Domain
+namespace Fedesoft.WomApp.Functions
 {
     using System;
 
