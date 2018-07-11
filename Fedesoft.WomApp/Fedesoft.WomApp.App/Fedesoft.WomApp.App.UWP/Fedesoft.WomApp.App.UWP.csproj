@@ -111,6 +111,11 @@
     <Content Include="Assets\agregar_usuario_24x24.png" />
     <Content Include="Assets\agregar_usuario_32x32.png" />
     <Content Include="Assets\agregar_usuario_64x64.png" />
+    <Content Include="Assets\facebook_circulo_126x128.png" />
+    <Content Include="Assets\facebook_circulo_16x16.png" />
+    <Content Include="Assets\facebook_circulo_24x24.png" />
+    <Content Include="Assets\facebook_circulo_32x32.png" />
+    <Content Include="Assets\facebook_circulo_64x64.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -126,6 +131,11 @@
     <Content Include="Assets\linea_purpura_24x24.png" />
     <Content Include="Assets\linea_purpura_32x32.png" />
     <Content Include="Assets\linea_purpura_64x64.png" />
+    <Content Include="Assets\megafono_128x128.png" />
+    <Content Include="Assets\megafono_16x16.png" />
+    <Content Include="Assets\megafono_24x24.png" />
+    <Content Include="Assets\megafono_32x32.png" />
+    <Content Include="Assets\megafono_64x64.png" />
     <Content Include="Assets\prevencion_16x16.png" />
     <Content Include="Assets\prevencion_24x24.png" />
     <Content Include="Assets\prevencion_32x32.png" />

@@ -83,7 +83,7 @@ namespace Fedesoft.WomApp.App.ViewModels
             }
 
             var menu = App.Current.MainPage as MainMenu;
-            menu.IsPresented = false;
+            //menu.IsPresented = false;
             this.Selected = null;
         }
     }

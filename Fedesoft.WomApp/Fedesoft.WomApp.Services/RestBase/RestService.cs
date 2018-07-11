@@ -59,6 +59,11 @@ namespace Fedesoft.WomApp.Services.RestBase
         protected abstract Uri SingleUri { get; }
 
         /// <summary>
+        /// Gets the SingleUriToken
+        /// </summary>
+        protected virtual string SingleUriToken => "{id}";
+
+        /// <summary>
         /// The DeleteItemAsync
         /// </summary>
         /// <param name="id">The id<see cref="string"/></param>
@@ -71,10 +76,19 @@ namespace Fedesoft.WomApp.Services.RestBase
         /// <summary>
         /// The GetDataAsync
         /// </summary>
+        /// <param name="id">The id<see cref="string"/></param>
         /// <returns>The <see cref="Task{TEntity}"/></returns>
-        public Task<TEntity> GetDataAsync()
+        public async Task<TEntity> GetDataAsync(string id)
         {
-            throw new NotImplementedException();
+            var uri = new Uri(this.SingleUri.AbsoluteUri.Replace(this.SingleUriToken, id));
+            var response = await this.client.GetAsync(uri);
+            var entity = default(TEntity);
+            if (response.IsSuccessStatusCode)
+            {
+                entity = JsonConvert.DeserializeObject<TEntity>(await response.Content.ReadAsStringAsync());
+            }
+
+            return entity;
         }
 
         /// <summary>

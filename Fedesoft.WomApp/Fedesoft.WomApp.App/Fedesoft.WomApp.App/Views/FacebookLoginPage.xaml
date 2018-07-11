@@ -2,11 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Fedesoft.WomApp.App.ViewModels;assembly=Fedesoft.WomApp.App"
-             x:Class="Fedesoft.WomApp.App.Views.FacebookProfilePage"
+             x:Class="Fedesoft.WomApp.App.Views.FacebookLoginPage"
+             xmlns:local="clr-namespace:Fedesoft.WomApp.App.Views.CustomViews"
              Title="Facebook Profile"
              BackgroundColor="White">
 
-    <ContentPage.BindingContext>
+    <local:CustomWebView Source="{Binding FbUri}" NavigatedCommand="{Binding }" />
+    <!--<WebView Source="{Binding FbUri}" HeightRequest="1"  />-->
+
+    <!--<ContentPage.BindingContext>
         <viewModels:FacebookViewModel/>
     </ContentPage.BindingContext>
 
@@ -22,5 +26,5 @@
         <Label Text="{Binding FacebookProfile.AgeRange.Min, StringFormat='AgeRange.Min: {0:N}'}" TextColor="Black" FontSize="22"/>
         <Label Text="{Binding FacebookProfile.Devices[0].Os, StringFormat='Devices: {0:N}'}" TextColor="Black" FontSize="22"/>
         <Image Source="{Binding FacebookProfile.Cover.Source}" HeightRequest="200" />
-    </StackLayout>
+    </StackLayout>-->
 </ContentPage>

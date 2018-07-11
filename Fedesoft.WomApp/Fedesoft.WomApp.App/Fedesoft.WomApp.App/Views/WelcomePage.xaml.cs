@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MainMenu.xaml.cs" company="Fedesoft">
+// <copyright file="MainPage.xaml.cs" company="Fedesoft">
 //     Copyright (c) Fedesoft. All rights reserved.
 // </copyright>
 // <author>Ricardo Linares Correa</author>
@@ -13,17 +13,17 @@ namespace Fedesoft.WomApp.App.Views
     using Xamarin.Forms.Xaml;
 
     /// <summary>
-    /// Defines the <see cref="MainMenu" />
+    /// Defines the <see cref="WelcomePage" />
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenu : ContentPage
+    public partial class WelcomePage : ContentPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainMenu"/> class.
+        /// Initializes a new instance of the <see cref="WelcomePage"/> class.
         /// </summary>
-        public MainMenu()
+        public WelcomePage()
         {
-            this.BindingContext = new MainMenuViewModel();
+            this.BindingContext = new WelcomePageViewModel(this);
             this.InitializeComponent();
         }
     }

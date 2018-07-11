@@ -21,11 +21,6 @@ namespace Fedesoft.WomApp.Functions
     public static class SaveUserData
     {
         /// <summary>
-        /// Defines the CosmosDBConnectionString
-        /// </summary>
-        private const string CosmosDBConnectionString = "CosmosDbConnection";
-
-        /// <summary>
         /// The Run
         /// </summary>
         /// <param name="req">The req<see cref="HttpRequestMessage"/></param>
@@ -38,10 +33,10 @@ namespace Fedesoft.WomApp.Functions
             HttpRequestMessage req,
             TraceWriter log,
             [DocumentDB(
-                    "Womapp", 
-                    "Users",
+                    Utils.CosmosDBDataBase,
+                    Utils.CosmosDBCollection,
                     CreateIfNotExists = true,
-                    ConnectionStringSetting = CosmosDBConnectionString)]
+                    ConnectionStringSetting = Utils.CosmosDBConnectionString)]
                     out dynamic document)
         {
             log.Info($"Consulta de datos iniciada");
@@ -51,22 +46,31 @@ namespace Fedesoft.WomApp.Functions
             string jsonContent = task.Result;
             dynamic data = JsonConvert.DeserializeObject(jsonContent);
             log.Info($"Convirtiendo datos en formato JSON {jsonContent}");
-            document = data;
-            if (data != null)
+            document = null;
+            try
             {
-                return req.CreateResponse(HttpStatusCode.OK, new
+                document = data;
+                if (data != null)
                 {
-                    result = 1,
-                    message = $"Solicitud recibida exitosamente"
-                });
+                    return req.CreateResponse(HttpStatusCode.OK, new
+                    {
+                        result = 1,
+                        message = $"Solicitud recibida exitosamente"
+                    });
+                }
+                else
+                {
+                    return req.CreateResponse(HttpStatusCode.BadRequest, new
+                    {
+                        result = 0,
+                        message = $"No se recibió ningún elemento."
+                    });
+                }
             }
-            else
+            catch (System.Exception ex)
             {
-                return req.CreateResponse(HttpStatusCode.BadRequest, new
-                {
-                    result = 0,
-                    message = $"No se recibió ningún elemento."
-                });
+                log.Error("Error al guardar datos", ex);
+                return req.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
             }
         }
     }
