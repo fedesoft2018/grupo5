@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
@@ -36,7 +36,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return of(new HttpResponse({ status: 200, body: body }));
                 } else {
                     // else return 400 bad request
-                    return throwError({ error: { message: 'Username or password is incorrect' } });
+                  return throwError({ error: { message: 'Nombre de usuario o contraseña incorrecta' } });
                 }
             }
 
@@ -47,7 +47,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return of(new HttpResponse({ status: 200, body: users }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return throwError({ error: { message: 'Unauthorised' } });
+                  return throwError({ error: { message: 'No autorizado' } });
                 }
             }
 
@@ -64,7 +64,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     return of(new HttpResponse({ status: 200, body: user }));
                 } else {
                     // return 401 not authorised if token is null or invalid
-                    return throwError({ error: { message: 'Unauthorised' } });
+                  return throwError({ error: { message: 'No autorizado' } });
                 }
             }
 
@@ -76,7 +76,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 // validation
                 let duplicateUser = users.filter(user => { return user.username === newUser.username; }).length;
                 if (duplicateUser) {
-                    return throwError({ error: { message: 'Username "' + newUser.username + '" is already taken' } });
+                  return throwError({ error: { message: 'Nombre de usuario "' + newUser.username + '" ya fue elegido' } });
                 }
 
                 // save new user
