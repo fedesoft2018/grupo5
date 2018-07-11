@@ -13,6 +13,11 @@ namespace Fedesoft.WomApp.CrossCutting
     public static class Constants
     {
         /// <summary>
+        /// Defines the OkButton
+        /// </summary>
+        public const string OkButton = "OK";
+
+        /// <summary>
         /// Defines the UserIdKey
         /// </summary>
         public const string UserIdKey = "UserId";
@@ -22,6 +27,20 @@ namespace Fedesoft.WomApp.CrossCutting
         /// </summary>
         public const string WomAppTitle = "WomApp";
 
-        public const string OkButton = "OK";
+        public const string FacebookClientId = "2149804661917953";
+
+        /// <summary>
+        /// Defines the HttpFacebookUrl
+        /// </summary>
+        public const string HttpFacebookUrl = "http://www.facebook.com/connect/login_success.html#access_token=";
+
+        /// <summary>
+        /// Defines the HttpsFacebookUrl
+        /// </summary>
+        public const string HttpsFacebookUrl = "https://www.facebook.com/connect/login_success.html#access_token=";
+
+        public const string FacebookAccessTokenKey = "access_token";
+
+        public const string FacebookExpiresKey = "&expires_in=";
     }
 }

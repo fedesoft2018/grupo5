@@ -20,6 +20,17 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
-        <Button Text="Login with Facebook" TextColor="White" BackgroundColor="#01579B" Font="Bold" FontSize="26"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="#4E598F" Margin="5,10,5,10">
+            <Image Source="facebook_circulo_32x32.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FacebookCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Continuar con Facebook" TextColor="White" Font="Bold" VerticalOptions="Center" HorizontalOptions="Fill" HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FacebookCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

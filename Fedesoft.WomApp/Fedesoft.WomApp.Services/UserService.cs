@@ -36,7 +36,7 @@ namespace Fedesoft.WomApp.Services
         /// <summary>
         /// Gets the SingleUri
         /// </summary>
-        protected override Uri SingleUri { get => throw new NotImplementedException(); }
+        protected override Uri SingleUri => new Uri("https://womappprevention.azurewebsites.net/api/users/{id}");
 
         /// <summary>
         /// The CreateUser

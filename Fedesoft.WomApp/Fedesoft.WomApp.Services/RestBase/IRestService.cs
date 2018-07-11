@@ -26,8 +26,9 @@ namespace Fedesoft.WomApp.Services.RestBase
         /// <summary>
         /// The GetDataAsync
         /// </summary>
+        /// <param name="id">The id<see cref="string"/></param>
         /// <returns>The <see cref="Task{TEntity}"/></returns>
-        Task<TEntity> GetDataAsync();
+        Task<TEntity> GetDataAsync(string id);
 
         /// <summary>
         /// The RefreshDataAsync

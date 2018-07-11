@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="MainPage.xaml.cs" company="Fedesoft">
+// <copyright file="FacebookProfilePage.xaml.cs" company="Fedesoft">
 //     Copyright (c) Fedesoft. All rights reserved.
 // </copyright>
 // <author>Ricardo Linares Correa</author>
@@ -13,18 +13,18 @@ namespace Fedesoft.WomApp.App.Views
     using Xamarin.Forms.Xaml;
 
     /// <summary>
-    /// Defines the <see cref="WelcomePage" />
+    /// Defines the <see cref="FacebookProfilePage" />
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WelcomePage : ContentPage
+    public partial class FacebookLoginPage : ContentPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WelcomePage"/> class.
+        /// Initializes a new instance of the <see cref="FacebookProfilePage"/> class.
         /// </summary>
-        public WelcomePage()
+        public FacebookLoginPage()
         {
-            this.BindingContext = new WelcomePageViewModel(this);
             this.InitializeComponent();
+            this.BindingContext = new FacebookViewModel(); 
         }
     }
 }

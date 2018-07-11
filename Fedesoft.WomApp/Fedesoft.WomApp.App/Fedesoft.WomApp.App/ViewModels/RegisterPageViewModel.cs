@@ -45,7 +45,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         public RegisterPageViewModel(ContentPage page)
         {
             this.Page = page;
-            this.SaveUserCommand = new Command(OnSaveUser);
+            this.SaveUserCommand = new Command(this.OnSaveUser);
         }
 
         /// <summary>

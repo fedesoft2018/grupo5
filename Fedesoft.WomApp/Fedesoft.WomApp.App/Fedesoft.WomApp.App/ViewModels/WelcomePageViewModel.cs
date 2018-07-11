@@ -15,15 +15,18 @@ namespace Fedesoft.WomApp.App.ViewModels
     using Xamarin.Forms;
 
     /// <summary>
-    /// Defines the <see cref="MainPageViewModel" />
+    /// Defines the <see cref="WelcomePageViewModel" />
     /// </summary>
-    public class MainPageViewModel : ViewModelBase
+    public class WelcomePageViewModel : ViewModelBase
     {
-        public ContentPage Page { get; private set; }
-
-        public MainPageViewModel(ContentPage page)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WelcomePageViewModel"/> class.
+        /// </summary>
+        /// <param name="page">The page<see cref="ContentPage"/></param>
+        public WelcomePageViewModel(ContentPage page)
         {
             this.Page = page;
+            this.FacebookCommand = new Command(GoToFacebook);
             this.RegisterCommand = new Command(GoToRegister);
         }
 
@@ -31,6 +34,11 @@ namespace Fedesoft.WomApp.App.ViewModels
         /// Gets the FacebookCommand
         /// </summary>
         public ICommand FacebookCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the Page
+        /// </summary>
+        public ContentPage Page { get; private set; }
 
         /// <summary>
         /// Gets the RegisterCommand
@@ -42,7 +50,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         /// </summary>
         private async void GoToFacebook()
         {
-            await this.Page.Navigation.PushAsync(new FacebookProfilePage());
+            await this.Page.Navigation.PushAsync(new FacebookLoginPage());
         }
 
         /// <summary>
