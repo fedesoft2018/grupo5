@@ -25,12 +25,12 @@ namespace Fedesoft.WomApp.Services.RestBase
         /// <summary>
         /// Defines the client
         /// </summary>
-        private readonly HttpClient client;
+        protected readonly HttpClient client;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RestService{TEntity}"/> class.
         /// </summary>
-        public RestService()
+        protected RestService()
         {
             this.client = new HttpClient
             {

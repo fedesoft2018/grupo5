@@ -16,7 +16,9 @@ namespace Fedesoft.WomApp.App
     using Microsoft.AppCenter;
     using Microsoft.AppCenter.Analytics;
     using Microsoft.AppCenter.Crashes;
+
     using Plugin.Settings;
+
     using Xamarin.Forms;
 
     /// <summary>
@@ -102,7 +104,7 @@ namespace Fedesoft.WomApp.App
         {
             if (!string.IsNullOrEmpty(UserId))
             {
-                NavPage = new NavigationPage(new UserProfilePage());
+                NavPage = new NavigationPage(new HomePage());
             }
             else
             {

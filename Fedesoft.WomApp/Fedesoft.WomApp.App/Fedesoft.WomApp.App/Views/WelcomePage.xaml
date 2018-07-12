@@ -32,5 +32,10 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Fill" Margin="5,10,5,10">
+            <Entry VerticalOptions="Center" HorizontalOptions="Fill" Placeholder="Email" Margin="0,10,0,10" Text="{Binding Email}" />
+            <Entry VerticalOptions="Center" HorizontalOptions="Fill" Placeholder="Contraseña" Margin="0,10,0,10" Text="{Binding Pass}" IsPassword="True" />
+            <Button Text="Ingresar" Command="{Binding SignInCommand}" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,10,0,10" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

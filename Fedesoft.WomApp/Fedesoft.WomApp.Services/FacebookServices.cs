@@ -89,7 +89,7 @@ namespace Fedesoft.WomApp.Services
                     UserId = Guid.NewGuid().ToString()
                 };
                 var userService = new UserService();
-                await userService.CreateUser(user);
+                await userService.CreateUserAsync(user);
             }
 
             return user;

@@ -14,8 +14,9 @@ namespace Fedesoft.WomApp.App.ViewModels
     using Fedesoft.WomApp.App.Views;
     using Fedesoft.WomApp.CrossCutting;
     using Fedesoft.WomApp.Domain;
-    using Plugin.Settings;
 
+    using Plugin.Settings;
+    
     /// <summary>
     /// Defines the <see cref="MainMenuViewModel" />
     /// </summary>
@@ -54,11 +55,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         /// <summary>
         /// Gets or sets the MenuItems
         /// </summary>
-        public IList<MainMenuItem> MenuItems
-        {
-            get => this.menuItems;
-            set => this.SetProperty(ref this.menuItems, value);
-        }
+        public IList<MainMenuItem> MenuItems { get => this.menuItems; set => this.SetProperty(ref this.menuItems, value); }
 
         /// <summary>
         /// Gets or sets the Selected
@@ -70,6 +67,47 @@ namespace Fedesoft.WomApp.App.ViewModels
             {
                 this.SetProperty(ref this.selected, value);
                 this.ActOnSelected(value);
+            }
+        }
+
+        /// <summary>
+        /// The MakeCall
+        /// </summary>
+        /// <param name="item">The item<see cref="MainMenuItem"/></param>
+        private static void MakeCall(MainMenuItem item)
+        {
+            if (!string.IsNullOrEmpty(item.LineNumber))
+            {
+                Dialer.MakeCall(item.LineNumber);
+            }
+        }
+
+        /// <summary>
+        /// The ActByMenuType
+        /// </summary>
+        /// <param name="item">The item<see cref="MainMenuItem"/></param>
+        private async void ActByMenuType(MainMenuItem item)
+        {
+            switch (item.MenuItemType)
+            {
+                case MenuItemType.Dial:
+                    MakeCall(item);
+                    break;
+                case MenuItemType.Profile:
+                    await App.NavPage.PushAsync(new UserProfilePage());
+                    break;
+                case MenuItemType.SignOut:
+                    if (await App.NavPage.DisplayAlert(Constants.WomAppTitle, "Está seguro de cerrar la sesión", Constants.OkButton, Constants.CancelButton))
+                    {
+                        CrossSettings.Current.Remove(Constants.UserIdKey);
+                    }
+
+                    break;
+                case MenuItemType.Prevention:
+                    await App.NavPage.PushAsync(new PreventPage());
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -88,34 +126,6 @@ namespace Fedesoft.WomApp.App.ViewModels
             var menu = App.Current.MainPage as MainMenu;
             //menu.IsPresented = false;
             this.Selected = null;
-        }
-
-        private async void ActByMenuType(MainMenuItem item)
-        {
-            switch (item.MenuItemType)
-            {
-                case MenuItemType.Dial:
-                    MakeCall(item);
-                    break;
-                case MenuItemType.Profile:
-                    await App.NavPage.PushAsync(new UserProfilePage());
-                    break;
-                case MenuItemType.SignOut:
-
-                    break;
-                case MenuItemType.Prevention:
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private static void MakeCall(MainMenuItem item)
-        {
-            if (!string.IsNullOrEmpty(item.LineNumber))
-            {
-                Dialer.MakeCall(item.LineNumber);
-            }
         }
     }
 }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Fedesoft.WomApp.App.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Fill">
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
+                        <Label Text="Denuncia" TextColor="Black"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ReportCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="https://womapp.blob.core.windows.net/womappimages/prevencion_32x32.png" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
+                        <Label Text="Prevención" TextColor="Black"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PreventCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Fill">
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
+                        <Label Text="Déjanos Conocerte" TextColor="Black"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MeetCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="https://womapp.blob.core.windows.net/womappimages/perfil_32x32.png" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
+                        <Label Text="Perfil" TextColor="Black"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ProfileCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

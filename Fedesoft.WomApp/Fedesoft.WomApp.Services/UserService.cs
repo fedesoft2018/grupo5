@@ -8,10 +8,15 @@
 namespace Fedesoft.WomApp.Services
 {
     using System;
+    using System.Diagnostics;
+    using System.Net.Http;
+    using System.Text;
     using System.Threading.Tasks;
 
     using Fedesoft.WomApp.Domain;
     using Fedesoft.WomApp.Services.RestBase;
+
+    using Newtonsoft.Json;
     
     /// <summary>
     /// Defines the <see cref="UserService" />
@@ -43,9 +48,38 @@ namespace Fedesoft.WomApp.Services
         /// </summary>
         /// <param name="user">The user<see cref="User"/></param>
         /// <returns>The <see cref="Task{bool}"/></returns>
-        public async Task<bool> CreateUser(User user)
+        public async Task<bool> CreateUserAsync(User user)
         {
             return await this.SaveItemAsync(user, true);
+        }
+
+        /// <summary>
+        /// The ValidateUserAsync
+        /// </summary>
+        /// <param name="user">The user<see cref="User"/></param>
+        /// <returns>The <see cref="Task{bool}"/></returns>
+        public async Task<bool> ValidateUserAsync(User user)
+        {
+            var result = false;
+            try
+            {
+                var json = JsonConvert.SerializeObject(user);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = null;
+                var validateUri = new Uri("https://womappprevention.azurewebsites.net/api/ValidateUser");
+                response = await client.PostAsync(validateUri, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"				ERROR {0}", ex.Message);
+            }
+
+            return result;
         }
     }
 }

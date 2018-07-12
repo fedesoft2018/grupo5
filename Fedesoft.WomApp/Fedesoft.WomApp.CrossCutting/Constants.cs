@@ -13,6 +13,11 @@ namespace Fedesoft.WomApp.CrossCutting
     public static class Constants
     {
         /// <summary>
+        /// Defines the CancelButton
+        /// </summary>
+        public const string CancelButton = "Cancel";
+
+        /// <summary>
         /// Defines the DefaultImagesBlobStorage
         /// </summary>
         public const string DefaultImagesBlobStorage = "https://womapp.blob.core.windows.net/womappimages/";

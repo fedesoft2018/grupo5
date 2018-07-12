@@ -112,7 +112,7 @@ namespace Fedesoft.WomApp.App.ViewModels
         private async System.Threading.Tasks.Task SaveUserAsync(User user)
         {
             var service = new UserService();
-            if (await service.CreateUser(user))
+            if (await service.CreateUserAsync(user))
             {
                 this.IsBusy = false;
                 App.UserId = user.UserId;
