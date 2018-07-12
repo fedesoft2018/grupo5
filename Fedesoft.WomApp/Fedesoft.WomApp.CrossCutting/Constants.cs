@@ -13,6 +13,36 @@ namespace Fedesoft.WomApp.CrossCutting
     public static class Constants
     {
         /// <summary>
+        /// Defines the DefaultImagesBlobStorage
+        /// </summary>
+        public const string DefaultImagesBlobStorage = "https://womapp.blob.core.windows.net/womappimages/";
+
+        /// <summary>
+        /// Defines the FacebookAccessTokenKey
+        /// </summary>
+        public const string FacebookAccessTokenKey = "access_token";
+
+        /// <summary>
+        /// Defines the FacebookClientId
+        /// </summary>
+        public const string FacebookClientId = "2149804661917953";
+
+        /// <summary>
+        /// Defines the FacebookExpiresKey
+        /// </summary>
+        public const string FacebookExpiresKey = "&expires_in=";
+
+        /// <summary>
+        /// Defines the HttpFacebookUrl
+        /// </summary>
+        public const string HttpFacebookUrl = "http://www.facebook.com/connect/login_success.html#access_token=";
+
+        /// <summary>
+        /// Defines the HttpsFacebookUrl
+        /// </summary>
+        public const string HttpsFacebookUrl = "https://www.facebook.com/connect/login_success.html#access_token=";
+
+        /// <summary>
         /// Defines the OkButton
         /// </summary>
         public const string OkButton = "OK";
@@ -26,21 +56,5 @@ namespace Fedesoft.WomApp.CrossCutting
         /// Defines the WomAppTitle
         /// </summary>
         public const string WomAppTitle = "WomApp";
-
-        public const string FacebookClientId = "2149804661917953";
-
-        /// <summary>
-        /// Defines the HttpFacebookUrl
-        /// </summary>
-        public const string HttpFacebookUrl = "http://www.facebook.com/connect/login_success.html#access_token=";
-
-        /// <summary>
-        /// Defines the HttpsFacebookUrl
-        /// </summary>
-        public const string HttpsFacebookUrl = "https://www.facebook.com/connect/login_success.html#access_token=";
-
-        public const string FacebookAccessTokenKey = "access_token";
-
-        public const string FacebookExpiresKey = "&expires_in=";
     }
 }

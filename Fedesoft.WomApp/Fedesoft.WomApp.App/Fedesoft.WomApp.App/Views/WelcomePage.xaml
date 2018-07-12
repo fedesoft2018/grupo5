@@ -9,7 +9,7 @@
     </ContentPage.ToolbarItems>
     <StackLayout Orientation="Vertical" VerticalOptions="Center">
         <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
-            <Image Source="agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center">
+            <Image Source="https://womapp.blob.core.windows.net/womappimages/agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
                 </Image.GestureRecognizers>
@@ -21,7 +21,7 @@
             </Label>
         </StackLayout>
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Fill" BackgroundColor="#4E598F" Margin="5,10,5,10">
-            <Image Source="facebook_circulo_32x32.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start">
+            <Image Source="https://womapp.blob.core.windows.net/womappimages/facebook_circulo_32x32.png" HeightRequest="32" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="Start">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding FacebookCommand}" />
                 </Image.GestureRecognizers>

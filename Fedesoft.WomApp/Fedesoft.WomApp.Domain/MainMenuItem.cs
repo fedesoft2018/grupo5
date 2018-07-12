@@ -35,6 +35,11 @@ namespace Fedesoft.WomApp.Domain
         public string LineNumber { get; set; }
 
         /// <summary>
+        /// Gets or sets the MenuItemType
+        /// </summary>
+        public MenuItemType MenuItemType { get; set; }
+
+        /// <summary>
         /// Gets or sets the TargetType
         /// </summary>
         public Type TargetType { get; set; }

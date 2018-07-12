@@ -4,7 +4,7 @@
              x:Class="Fedesoft.WomApp.App.Views.RegisterPage">
     <ContentPage.Content>
         <StackLayout>
-            <Image Source="agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Image Source="https://womapp.blob.core.windows.net/womappimages/agregar_usuario_64x64.png" HeightRequest="64" WidthRequest="64" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Label Text="Email:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
             <Entry VerticalOptions="Center" HorizontalOptions="Fill" Placeholder="Ej. usuario@womaap.com" Text="{Binding Email, Mode=TwoWay}" />
             <Label Text="Contraseña:" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />

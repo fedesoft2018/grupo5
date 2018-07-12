@@ -14,7 +14,8 @@ namespace Fedesoft.WomApp.App.ViewModels
     using Fedesoft.WomApp.App.Views;
     using Fedesoft.WomApp.CrossCutting;
     using Fedesoft.WomApp.Domain;
-    
+    using Plugin.Settings;
+
     /// <summary>
     /// Defines the <see cref="MainMenuViewModel" />
     /// </summary>
@@ -37,11 +38,17 @@ namespace Fedesoft.WomApp.App.ViewModels
         {
             this.MenuItems = new ObservableCollection<MainMenuItem>()
             {
-                new MainMenuItem() { Title = "Línea Púrpura", LineNumber = "01800112137", Icon = "linea_purpura_24x24.png", IconWith = 24, IconHeight = 24 },
-                new MainMenuItem() { Title = "Línea 155", LineNumber="155", Icon = "linea_155_24x24.png", IconWith = 24, IconHeight = 24 },
-                new MainMenuItem() { Title = "Línea 123", LineNumber="123", Icon = "linea_123_24x24.png", IconWith = 24, IconHeight = 24 },
-                new MainMenuItem() { Title = "Prevención", Icon = "prevencion_24x24.png", IconWith = 24, IconHeight = 24 }
+                new MainMenuItem { Title = "Línea Púrpura", LineNumber = "01800112137", Icon = $"{Constants.DefaultImagesBlobStorage}linea_purpura_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Dial },
+                new MainMenuItem { Title = "Línea 155", LineNumber="155", Icon = $"{Constants.DefaultImagesBlobStorage}linea_155_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Dial },
+                new MainMenuItem { Title = "Línea 123", LineNumber="123", Icon = $"{Constants.DefaultImagesBlobStorage}linea_123_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Dial },
+                new MainMenuItem { Title = "Prevención", Icon = $"{Constants.DefaultImagesBlobStorage}prevencion_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Prevention }
             };
+
+            if (!string.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Constants.UserIdKey, string.Empty)))
+            {
+                this.MenuItems.Add(new MainMenuItem { Title = "Perfil", Icon = $"{Constants.DefaultImagesBlobStorage}perfil_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Profile });
+                this.MenuItems.Add(new MainMenuItem { Title = "Cerrar Sesión", Icon = $"{Constants.DefaultImagesBlobStorage}cerrar_sesion_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.SignOut });
+            }
         }
 
         /// <summary>
@@ -77,14 +84,38 @@ namespace Fedesoft.WomApp.App.ViewModels
                 return;
             }
 
+            this.ActByMenuType(item);
+            var menu = App.Current.MainPage as MainMenu;
+            //menu.IsPresented = false;
+            this.Selected = null;
+        }
+
+        private async void ActByMenuType(MainMenuItem item)
+        {
+            switch (item.MenuItemType)
+            {
+                case MenuItemType.Dial:
+                    MakeCall(item);
+                    break;
+                case MenuItemType.Profile:
+                    await App.NavPage.PushAsync(new UserProfilePage());
+                    break;
+                case MenuItemType.SignOut:
+
+                    break;
+                case MenuItemType.Prevention:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private static void MakeCall(MainMenuItem item)
+        {
             if (!string.IsNullOrEmpty(item.LineNumber))
             {
                 Dialer.MakeCall(item.LineNumber);
             }
-
-            var menu = App.Current.MainPage as MainMenu;
-            //menu.IsPresented = false;
-            this.Selected = null;
         }
     }
 }
