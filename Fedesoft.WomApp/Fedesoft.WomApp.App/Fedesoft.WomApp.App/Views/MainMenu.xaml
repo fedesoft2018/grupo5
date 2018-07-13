@@ -15,8 +15,8 @@
                         <ViewCell>
                             <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent">
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding Icon}" Aspect="AspectFit" WidthRequest="{Binding IconWidth}" HeightRequest="{Binding IconHeight}" />
-                                    <Label Text="{Binding Title}" TextColor="Black"/>
+                                    <Image Source="{Binding Icon}" Aspect="AspectFit" WidthRequest="{Binding IconWidth}" HeightRequest="{Binding IconHeight}" VerticalOptions="Center" HorizontalOptions="Start" />
+                                    <Label Text="{Binding Title}" TextColor="Black" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
                                 </StackLayout>
                             </Frame>
                         </ViewCell>

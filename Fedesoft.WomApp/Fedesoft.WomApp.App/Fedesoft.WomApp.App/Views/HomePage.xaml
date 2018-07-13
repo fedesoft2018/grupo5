@@ -5,19 +5,19 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Fill">
-                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
-                        <Label Text="Denuncia" TextColor="Black"/>
+                <Frame BorderColor="Magenta" Padding="2" Margin="5,5,2,5" WidthRequest="128" HeightRequest="128" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                        <Image Source="" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Text="Denuncia" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
                     </StackLayout>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ReportCommand}" />
                     </Frame.GestureRecognizers>
                 </Frame>
-                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://womapp.blob.core.windows.net/womappimages/prevencion_32x32.png" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
-                        <Label Text="Prevención" TextColor="Black"/>
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="DarkOrange" WidthRequest="128" HeightRequest="128" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                        <Image Source="https://womapp.blob.core.windows.net/womappimages/prevencion_32x32.png" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Text="Prevención" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
                     </StackLayout>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding PreventCommand}" />
@@ -25,19 +25,19 @@
                 </Frame>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Fill">
-                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
-                        <Label Text="Déjanos Conocerte" TextColor="Black"/>
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Aqua" WidthRequest="128" HeightRequest="128" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                        <Image Source="" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Text="Déjanos Conocerte" TextColor="Black" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding MeetCommand}" />
                     </Frame.GestureRecognizers>
                 </Frame>
-                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Transparent" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
-                    <StackLayout Orientation="Vertical">
-                        <Image Source="https://womapp.blob.core.windows.net/womappimages/perfil_32x32.png" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" />
-                        <Label Text="Perfil" TextColor="Black"/>
+                <Frame Padding="2" Margin="5,5,2,5" BorderColor="Gray" WidthRequest="128" HeightRequest="128" BackgroundColor="Transparent" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                        <Image Source="https://womapp.blob.core.windows.net/womappimages/perfil_32x32.png" Aspect="AspectFit" WidthRequest="32" HeightRequest="32" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label Text="Perfil" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
                     </StackLayout>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ProfileCommand}" />

@@ -170,4 +170,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\hamburger_menu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megafono_32x32.png" />
+  </ItemGroup>
 </Project>

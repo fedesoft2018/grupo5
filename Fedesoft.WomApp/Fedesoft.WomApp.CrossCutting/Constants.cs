@@ -40,12 +40,12 @@ namespace Fedesoft.WomApp.CrossCutting
         /// <summary>
         /// Defines the HttpFacebookUrl
         /// </summary>
-        public const string HttpFacebookUrl = "http://www.facebook.com/connect/login_success.html#access_token=";
+        public const string HttpFacebookUrl = "http://web.facebook.com/connect/login_success.html?_rdc=1&_rdr#access_token=";
 
         /// <summary>
         /// Defines the HttpsFacebookUrl
         /// </summary>
-        public const string HttpsFacebookUrl = "https://www.facebook.com/connect/login_success.html#access_token=";
+        public const string HttpsFacebookUrl = "https://web.facebook.com/connect/login_success.html?_rdc=1&_rdr#access_token=";
 
         /// <summary>
         /// Defines the OkButton

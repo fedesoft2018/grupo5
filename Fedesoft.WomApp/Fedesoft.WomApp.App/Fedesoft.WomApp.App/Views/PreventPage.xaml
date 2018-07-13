@@ -2,11 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Fedesoft.WomApp.App.Views.PreventPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="PanicButton" Order="Primary" Icon="megafono_32x32.png" Priority="0" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding NewsItems}" VerticalOptions="FillAndExpand" SeparatorVisibility="None" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BorderColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="Fill">
+                                <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
+                                    <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="128" HorizontalOptions="Fill" />
+                                    <Label Text="{Binding Title}" Font="Bold" FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Lead}" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

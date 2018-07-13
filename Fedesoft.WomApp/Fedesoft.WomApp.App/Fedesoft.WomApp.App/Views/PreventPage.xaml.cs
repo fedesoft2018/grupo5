@@ -1,20 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿//-----------------------------------------------------------------------
+// <copyright file="PreventPage.xaml.cs" company="Fedesoft">
+//     Copyright (c) Fedesoft. All rights reserved.
+// </copyright>
+// <author>Ricardo Linares Correa</author>
+//-----------------------------------------------------------------------
 
 namespace Fedesoft.WomApp.App.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PreventPage : ContentPage
-	{
-		public PreventPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+    using Fedesoft.WomApp.App.ViewModels;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
+
+    /// <summary>
+    /// Defines the <see cref="PreventPage" />
+    /// </summary>
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PreventPage : ContentPage
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PreventPage"/> class.
+        /// </summary>
+        public PreventPage()
+        {
+            this.InitializeComponent();
+            this.BindingContext = new PreventViewModel();
+        }
+    }
 }

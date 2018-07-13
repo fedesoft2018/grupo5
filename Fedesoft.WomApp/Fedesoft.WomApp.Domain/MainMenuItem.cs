@@ -27,7 +27,7 @@ namespace Fedesoft.WomApp.Domain
         /// <summary>
         /// Gets or sets the IconWith
         /// </summary>
-        public int IconWith { get; set; }
+        public int IconWidth { get; set; }
 
         /// <summary>
         /// Gets or sets the LineNumber

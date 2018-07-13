@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fedesoft.WomApp.App.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,8 @@ namespace Fedesoft.WomApp.App.Views
 	{
 		public UserProfilePage ()
 		{
-			InitializeComponent ();
+			this.InitializeComponent();
+            this.BindingContext = new UserProfileViewModel();
 		}
 	}
 }

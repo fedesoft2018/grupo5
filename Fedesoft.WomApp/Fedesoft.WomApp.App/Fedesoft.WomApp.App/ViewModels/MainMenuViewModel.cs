@@ -39,16 +39,16 @@ namespace Fedesoft.WomApp.App.ViewModels
         {
             this.MenuItems = new ObservableCollection<MainMenuItem>()
             {
-                new MainMenuItem { Title = "Línea Púrpura", LineNumber = "01800112137", Icon = $"{Constants.DefaultImagesBlobStorage}linea_purpura_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Dial },
-                new MainMenuItem { Title = "Línea 155", LineNumber="155", Icon = $"{Constants.DefaultImagesBlobStorage}linea_155_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Dial },
-                new MainMenuItem { Title = "Línea 123", LineNumber="123", Icon = $"{Constants.DefaultImagesBlobStorage}linea_123_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Dial },
-                new MainMenuItem { Title = "Prevención", Icon = $"{Constants.DefaultImagesBlobStorage}prevencion_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Prevention }
+                new MainMenuItem { Title = "Línea Púrpura", LineNumber = "01800112137", Icon = $"{Constants.DefaultImagesBlobStorage}linea_purpura_32x32.png", IconWidth = 32, IconHeight = 32, MenuItemType = MenuItemType.Dial },
+                new MainMenuItem { Title = "Línea 155", LineNumber="155", Icon = $"{Constants.DefaultImagesBlobStorage}linea_155_32x32.png", IconWidth = 32, IconHeight = 32, MenuItemType = MenuItemType.Dial },
+                new MainMenuItem { Title = "Línea 123", LineNumber="123", Icon = $"{Constants.DefaultImagesBlobStorage}linea_123_32x32.png", IconWidth = 32, IconHeight = 32, MenuItemType = MenuItemType.Dial },
+                new MainMenuItem { Title = "Prevención", Icon = $"{Constants.DefaultImagesBlobStorage}prevencion_32x32.png", IconWidth = 32, IconHeight = 32, MenuItemType = MenuItemType.Prevention }
             };
 
             if (!string.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Constants.UserIdKey, string.Empty)))
             {
-                this.MenuItems.Add(new MainMenuItem { Title = "Perfil", Icon = $"{Constants.DefaultImagesBlobStorage}perfil_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.Profile });
-                this.MenuItems.Add(new MainMenuItem { Title = "Cerrar Sesión", Icon = $"{Constants.DefaultImagesBlobStorage}cerrar_sesion_24x24.png", IconWith = 24, IconHeight = 24, MenuItemType = MenuItemType.SignOut });
+                this.MenuItems.Add(new MainMenuItem { Title = "Perfil", Icon = $"{Constants.DefaultImagesBlobStorage}perfil_32x32.png", IconWidth = 32, IconHeight = 32, MenuItemType = MenuItemType.Profile });
+                this.MenuItems.Add(new MainMenuItem { Title = "Cerrar Sesión", Icon = $"{Constants.DefaultImagesBlobStorage}cerrar_sesion_32x32.png", IconWidth = 32, IconHeight = 32, MenuItemType = MenuItemType.SignOut });
             }
         }
 
